@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import CartWidget from "../CartWidget";
 
 export default function NavBarr(){
 
@@ -20,6 +21,7 @@ export default function NavBarr(){
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">WhatsApp</NavDropdown.Item>
                             </NavDropdown>
+                            <Nav.Link><CartWidget/></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
