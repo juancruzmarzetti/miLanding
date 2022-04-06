@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
+import ItemCount from "../ItemCount";
 
 export default function ItemListContainer(props){
 
     return(
         <>
-        <h2>{props.mostraElTextoPorfavor}</h2>
+        <ItemCount stock={5}/>
         </>
     );
 }
