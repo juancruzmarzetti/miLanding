@@ -23,9 +23,7 @@ export default function ItemCount({stock}){
    
 
     return(
-        <>  <div>
-                <h4 className={customCss.item}>Ítem</h4>
-            </div>
+        <>  
             <div className={customCss.botonesGeneral}>
                 <button onClick={incrementar} className={customCss.botonIncrementar}>+</button>
                 <div className={customCss.contador}>{count}</div>
