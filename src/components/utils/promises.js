@@ -1,3 +1,4 @@
+
 let itsOkay = true;
 
 const customFetch = (time, task) => {
@@ -8,5 +9,6 @@ const customFetch = (time, task) => {
         }, time)
     })
 }
+
 
 export default customFetch;

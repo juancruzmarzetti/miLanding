@@ -3,7 +3,8 @@ import customFetch from "../utils/promises";
 import products from "../utils/products";
 import ItemList from "../ItemList/ItemList";
 
-export default function ItemListContainer(){
+export default function ItemListContainer({}){
+    let stock = 5;
 
     const [products2, setProducts2] = useState([]);
     
@@ -15,7 +16,7 @@ export default function ItemListContainer(){
 
     return(
         <> 
-            <ItemList products={products2} />
+            <ItemList products={products2} stock={stock}/>
         </>
     );
 }

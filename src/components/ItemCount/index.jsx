@@ -15,12 +15,11 @@ export default function ItemCount({stock}){
     function decrementar(){
         if(count > 0){setCount(count - 1)}
     };
-
+    
     function onAdd(){
         if(count > 0){alert("¡Has agregado " + count + " items a tu carrito!")}
         else{setDisable(true)}
     };
-   
 
     return(
         <>  
@@ -33,4 +32,5 @@ export default function ItemCount({stock}){
             </div>
         </>
     );
+
 }
