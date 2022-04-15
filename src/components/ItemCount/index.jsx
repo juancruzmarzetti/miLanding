@@ -1,34 +1,26 @@
 import React, { useState } from "react";
 import customCss from "./itemCount.module.css";
 
-export default function ItemCount({stock}){
+export default function ItemCount({stock, onAdd, count}){
 
-    const [count, setCount] = useState(0);
-
-    const[disable, setDisable] = useState(true);
+    const [counter, setCounter] = useState(count);
 
     function incrementar(){
-        if (count < stock){setCount(count + 1);
-            setDisable(false)}
+        if (counter < stock){setCounter(counter + 1);}
     };
 
     function decrementar(){
-        if(count > 0){setCount(count - 1)}
-    };
-    
-    function onAdd(){
-        if(count > 0){alert("¡Has agregado " + count + " items a tu carrito!")}
-        else{setDisable(true)}
+        if(counter > 0){setCounter(counter - 1)}
     };
 
     return(
         <>  
             <div className={customCss.botonesGeneral}>
                 <button onClick={incrementar} className={customCss.botonIncrementar}>+</button>
-                <div className={customCss.contador}>{count}</div>
+                <div className={customCss.contador}>{counter}</div>
                 <button onClick={decrementar} className={customCss.botonDecrementar}>-</button>
                 <br/>
-                <button disabled={disable} onClick={onAdd} className={customCss.botonComprar}>Comprar</button>
+                <button disabled={counter < 1 ? true : false} /* correción => */ onClick={() => onAdd(counter)} className={customCss.botonComprar}>Comprar</button>
             </div>
         </>
     );

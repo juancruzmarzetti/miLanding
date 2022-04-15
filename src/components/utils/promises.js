@@ -1,11 +1,11 @@
+import products from "./products";
 
-let itsOkay = true;
-
-const customFetch = (time, task) => {
+const customFetch = (time, task, categoryId) => {
     return new Promise((resolve, reject) => {
+        const filtrarProductos = task.filter(p => p.category === categoryId);
         setTimeout(() => {
-            if(itsOkay)resolve(task)
-            else{reject("error")}
+            if(categoryId){resolve(filtrarProductos)}
+            else{resolve(products)}
         }, time)
     })
 }

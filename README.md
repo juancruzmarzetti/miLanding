@@ -1,3 +1,6 @@
+
+![image](https://github.com/juancruzmarzetti/miLanding/chrome-capture-2022-3-14.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
