@@ -20,7 +20,7 @@ export default function ItemCount({stock, onAdd, count}){
                 <div className={customCss.contador}>{counter}</div>
                 <button onClick={decrementar} className={customCss.botonDecrementar}>-</button>
                 <br/>
-                <button disabled={counter < 1 ? true : false} /* correción => */ onClick={() => onAdd(counter)} className={customCss.botonComprar}>Comprar</button>
+                <button disabled={counter < 1 ? true : false} onClick={() => onAdd(counter)} className={customCss.botonComprar}>Comprar</button>
             </div>
         </>
     );

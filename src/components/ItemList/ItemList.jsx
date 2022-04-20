@@ -2,12 +2,12 @@ import React from 'react';
 import Item from '../Item/Item';
 
 
-export default function ItemList({products, stock, count, onAdd /* <= correción */}) {
+export default function ItemList({products, stock, count, onAdd}) {
   return (
     products.map(product => 
         <Item
         count={count}
-        onAdd={onAdd}// <= correción
+        onAdd={onAdd}
         stock={stock}
         id={product.id}
         nombre={product.nombre}

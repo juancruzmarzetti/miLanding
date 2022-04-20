@@ -7,10 +7,10 @@ import { useParams } from "react-router-dom";
 export default function ItemListContainer(){
     let stock = 5;
     let count = 0;
-    //correción 
     function onAdd(x){
-        if(x > 0){alert("¡Has agregado " + x + " item/s a tu carrito!")}}
-    //correción
+        if(x > 0){alert("¡Has agregado " + x + " item/s a tu carrito!")}
+    };
+
     const [products2, setProducts2] = useState([]);
 
     const {categoryId} = useParams();
@@ -25,7 +25,7 @@ export default function ItemListContainer(){
 
     return(
         <> 
-            <ItemList products={products2} stock={stock} count={count} /* correción => */ onAdd={onAdd}/>
+            <ItemList products={products2} stock={stock} count={count} onAdd={onAdd}/>
         </>
     );
 }
