@@ -8,11 +8,7 @@ export default function ItemDetailContainer() {
     let stock = 5;
     let count = 0;
     const [cantidad, setCantidad] = useState(count);
-    function onAdd(x){
-      if(x > 0){alert("¡Has agregado " + x + " item/s a tu carrito!");
-                setCantidad(x);
-                console.log(cantidad);}
-    };
+
     useEffect(()=>{
       console.log(cantidad);
     }, [cantidad]);
@@ -35,7 +31,7 @@ export default function ItemDetailContainer() {
 
   return (
     <>
-        <ItemDetail producto={product2} stock={stock} count={count} onAdd={onAdd} setCantidad={setCantidad} cantidad={cantidad}/>
+        <ItemDetail producto={product2} stock={stock} count={count} cantidad={cantidad} setCantidad={setCantidad}/>
     </>
   )
 };

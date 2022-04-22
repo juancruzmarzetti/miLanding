@@ -12,8 +12,9 @@ export default function App() {
 
   return (
     
-    <CartContextProvider>
+    
       <BrowserRouter>
+        <CartContextProvider>
           <NavBarr/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>} />
@@ -21,8 +22,7 @@ export default function App() {
             <Route path='/product/:id' element={<ItemDetailContainer/>} />
             <Route path='/cart' element={<CartDetail/>} />
           </Routes>
-        </BrowserRouter>
-      </CartContextProvider>
-    
+        </CartContextProvider>
+      </BrowserRouter>
   );
 }

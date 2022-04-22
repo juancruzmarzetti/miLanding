@@ -3,17 +3,26 @@ import React, {createContext, useState} from "react";
 export const CartContext = createContext();
 
 export default function CartContextProvider({children}){
-     /*Contexto para CartDetail: desafío Jueves 21
+     //Contexto para CartDetail: desafío Jueves 21
     const [cart, setCart] = useState([]);
 
-    const addToCart = (item) => console.log(item);
+    const addToCart = (item) => {
+        const indexItem = cart.findIndex((cartItem) => cartItem.id === item.id);
+        if(indexItem !== -1){
+            const cartCopy = [...cart];
+            cartCopy[indexItem].counter = cartCopy[indexItem].counter + item.counter;
+        }else{
+        setCart([...cart, item]);
+        console.log(cart)}
+    };
 
-    const removeFromCart = (item) => console.log("- " + item);
+    const removeFromCart = (id) => {setCart(cart.filter((item) => item.id !== id));
+    console.log(cart)};
 
-    const buyAll = () => setCart([]);*/
+    const buyAll = () => setCart([]);
 
     return(
-        <CartContext.Provider value={{/*cart, addToCart, removeFromCart, buyAll*/}}>
+        <CartContext.Provider value={{cart, addToCart, removeFromCart, buyAll}}>
             {children}
         </CartContext.Provider>
     )

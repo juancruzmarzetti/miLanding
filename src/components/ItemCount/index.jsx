@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import customCss from "./itemCount.module.css";
 
-export default function ItemCount({stock, onAdd, count}){
+export default function ItemCount({stock, addToCart, count, producto, setCantidad}){
 
     const [counter, setCounter] = useState(count);
 
@@ -20,7 +20,7 @@ export default function ItemCount({stock, onAdd, count}){
                 <div className={customCss.contador}>{counter}</div>
                 <button onClick={decrementar} className={customCss.botonDecrementar}>-</button>
                 <br/>
-                <button disabled={counter < 1 ? true : false} onClick={() => onAdd(counter)} className={customCss.botonComprar}>Comprar</button>
+                <button disabled={counter < 1 ? true : false} onClick={() => {setCantidad(counter); addToCart(producto={...producto, counter})}} className={customCss.botonComprar}>Comprar</button>
             </div>
         </>
     );

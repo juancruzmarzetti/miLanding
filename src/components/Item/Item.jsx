@@ -1,11 +1,13 @@
 import React from 'react';
-import ItemCount from '../ItemCount';
+//import ItemCount from '../ItemCount';
 import Card from 'react-bootstrap/Card';
 import customCss from "./Item.module.css";
 import Button from 'react-bootstrap/Button'; 
 import { Link } from 'react-router-dom';
 
-export default function Item({id, nombre, precio, img, stock, count, onAdd}) {
+export default function Item({id, nombre, precio, img/* stock, count, onAdd*/}) {
+
+  // <ItemCount className={customCss.boton} stock={stock} count={count} onAdd={onAdd}/>
   return (
     <>
       <div className={customCss.itemG}>
@@ -17,7 +19,6 @@ export default function Item({id, nombre, precio, img, stock, count, onAdd}) {
               $ {precio}
               </Card.Text>
           </Card.Body>
-          <ItemCount className={customCss.boton} stock={stock} count={count} onAdd={onAdd}/>
             <Button as={Link} to={`/product/${id}`} variant="outline-info">Ver Detalle</Button>
         </Card>
       </div>
