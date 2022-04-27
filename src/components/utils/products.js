@@ -17,7 +17,7 @@ const products = [
         img : "https://products0.imgix.drizly.com/ci-guinness-el-dorado-amber-d57e92db5dae2b42.jpeg?auto=format%2Ccompress&ch=Width%2CDPR&fm=jpg&q=20",
         img1 : "https://drizly.flavedo.io/citrus/oKDVgbXdNGIDj3G7EDdoJkfP7N_fY6HxyTvQR3_Re54=",
         img2 : "https://assets.noviams.com/novi-file-uploads/wim/Chapters/MN_Town_Hall_Brewery_Pic_1.jpg",
-        img3 : "https://hacercervezaartesanal.com/wp-content/uploads/2020/11/receta-cerveza-amber-ale-1.jpg",
+        img3 : "https://us.123rf.com/450wm/derkien/derkien1902/derkien190200108/117972179-cerveza-de-cerveza-marr%C3%B3n-en-un-vaso-sobre-un-fondo-degradado-dorado-.jpg?ver=6",
         detalle : "El fuerte equilibrio de El Dorado Amber Ale la convierte en una cerveza versátil para combinar con sabores de alimentos complementarios y contrastantes. Combínalo con Guinness Brown Bread para hacer que los sabores de la miel canten, o córtalo con quesos fuertes en una tabla de charcutería para un rico contraste de nueces. También es una elección natural para las reuniones a la parrilla y los días de juego este otoño, ya que los sabores ahumados de casi cualquier cosa asada muestran los aromas brillantes y dinámicos.",
         category: "amber",
         quantity: 5

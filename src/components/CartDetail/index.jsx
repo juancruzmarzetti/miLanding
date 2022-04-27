@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom';
 
 export default function CartDetail() {
 
-  const {cart, removeFromCart, buyAll} = useContext(CartContext);
+  const {cart, removeFromCart, buyAll, cant} = useContext(CartContext);
   console.log(cart);
-
+  let valorTotal = cant();
+  console.log(valorTotal);
   return (
     <>
       <h1 className={customCss.text}>Cart shopping</h1>
@@ -25,14 +26,15 @@ export default function CartDetail() {
           </div>
           <Button variant="outline-secondary" onClick={() => removeFromCart(item.id)}>Remove from cart</Button>
           <Badge bg="primary" pill>
-          {item.counter}
+            {item.counter}
           </Badge>
         </ListGroup.Item> ) : <div><Button 
-        as={Link} to="/" variant="outline-success">Back to shop</Button> <br/> <h1>The cart is empty</h1></div> }</div>
+        as={Link} to="/" variant="outline-success">Back to shop</Button> <br/> <h1 className={customCss.text}>The cart is empty</h1></div> }</div>
       </ListGroup>
       { cart.length > 0 && <div>
+        <h2 className={customCss.text}>Total value: $ {valorTotal}</h2>
         <hr/>
-        <Button variant="outline-success" onClick={() => buyAll()}>Buy Everything</Button>
+        <Button variant="outline-success" onClick={() => buyAll()}>Finish my purchase</Button>
         <hr/>
         <Button variant="outline-secondary" onClick={() => buyAll()}>Clean cart</Button>
       </div>}

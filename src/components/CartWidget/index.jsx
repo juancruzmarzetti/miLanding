@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext";
+
 export default function CartWidget(){
+    const {cantItems} = useContext(CartContext);
+    let totalItems = cantItems();
     return(
         <>
-            <Link to="/cart">🛒</Link>
+            { totalItems > 0 && <Link to="/cart">🛒{totalItems}</Link>}
         </>
     );
 }
