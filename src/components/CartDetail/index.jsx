@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 
 export default function CartDetail() {
 
-  const {cart, removeFromCart, buyAll, cant} = useContext(CartContext);
+  const {cart, removeFromCart, buyAll, valorTotal, totalItems} = useContext(CartContext);
   console.log(cart);
-  let valorTotal = cant();
+  //let valorTotal = cant();
   console.log(valorTotal);
   return (
     <>
@@ -22,7 +22,7 @@ export default function CartDetail() {
         >
           <div className="ms-2 me-auto">
             <div className="fw-bold">{item.nombre}</div>
-            $ {item.precio}
+            {item.counter} {item.category} x  $ {item.precio} c/u
           </div>
           <Button variant="outline-secondary" onClick={() => removeFromCart(item.id)}>Remove from cart</Button>
           <Badge bg="primary" pill>
@@ -33,6 +33,8 @@ export default function CartDetail() {
       </ListGroup>
       { cart.length > 0 && <div>
         <h2 className={customCss.text}>Total value: $ {valorTotal}</h2>
+        <hr/>
+        <h2 className={customCss.text}>Total items: {totalItems}</h2>
         <hr/>
         <Button variant="outline-success" onClick={() => buyAll()}>Finish my purchase</Button>
         <hr/>
