@@ -36,7 +36,7 @@ export default function CartDetail() {
         <hr/>
         <h2 className={customCss.text}>Total items: {totalItems}</h2>
         <hr/>
-        <Button variant="outline-success" onClick={() => buyAll()}>Finish my purchase</Button>
+        <Button as={Link} to='/cart/checkout' variant="outline-success" /*onClick={() => buyAll()}*/>Finish my purchase</Button>
         <hr/>
         <Button variant="outline-secondary" onClick={() => buyAll()}>Clean cart</Button>
       </div>}
