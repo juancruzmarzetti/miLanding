@@ -11,7 +11,7 @@ El código existente a cambiar, cambiarlo a comentario y una línea debajo de es
 En vez de borrar, comentarlo, y realizar una revisión en equipo para verificar si es necesario sustituirlo o es optimizante para el proyecto directamente borrarlo.
 
 ### Otras situciones:
-Agregar un/os comentario/s en la/s parte/s del código que se haya cmabiado indicando que se ha cambiado el código.
+Agregar un/os comentario/s en la/s parte/s del código que se haya cambiado indicando que se ha cambiado el código.
 
 ## Importante:
 ### Siempre que se haga un comentario agregar en el mismo la fecha en que se hizo, y por quién.
