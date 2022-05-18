@@ -7,16 +7,16 @@ import {Routes, Route, BrowserRouter } from 'react-router-dom';
 import CartContextProvider from './components/CartContext';
 import CartDetail from './components/CartDetail';
 import CartCheckout from './components/CartCheckout';
+import customMyCss from "./App.module.css";
 
 
 export default function App() {
 
   return (
-    
-    
       <BrowserRouter>
         <CartContextProvider>
           <NavBarr/>
+          <div className={customMyCss.customBackground}>
           <Routes>
             <Route path='/' element={<ItemListContainer/>} />
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
@@ -24,6 +24,7 @@ export default function App() {
             <Route path='/cart' element={<CartDetail/>} />
             <Route path='/cart/checkout' element={<CartCheckout/>} />
           </Routes>
+          </div>
         </CartContextProvider>
       </BrowserRouter>
   );

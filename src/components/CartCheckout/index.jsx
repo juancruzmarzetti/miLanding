@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
 import { CartContext } from '../CartContext';
 import {addDoc, collection, getFirestore, serverTimestamp} from "firebase/firestore";
+import CartCheckoutItems from '../CartCheckoutItems';
+import customMyCss from "./index.module.css";
 
 export default function CartCheckout() {
 
@@ -50,33 +52,36 @@ export default function CartCheckout() {
 
   return (
     <>
-        <h2>Cart Shop Checkout</h2>
-        { checkoutId === "" && <>
-        <Form><Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control name='email' type="email" placeholder="Enter email" onChange={(e)=> {handleOnChange(e); handleEmailRequired(e)}} required/>
-            <Form.Text className="text-muted">
-                Campo obligatorio.
-            </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control name='name' type="text" placeholder="Enter name" onChange={handleOnChange} required/>
-        </Form.Group>
-        <Form.Group className="mb-3">
-            <Form.Label>Surname</Form.Label>
-            <Form.Control name='surname' type="text" placeholder="Enter surname" onChange={handleOnChange} required/>
-        </Form.Group>
-        <Form.Group className="mb-3">
-            <Form.Label>Cellphone number</Form.Label>
-            <Form.Control name='cellphone' type="number" placeholder="Enter cellphone number" onChange={(e)=> {handleOnChange(e); handleCellphoneRequired(e)}} required/>
-            <Form.Text className="text-muted">
-                Campo obligatorio.
-            </Form.Text>
-        </Form.Group></Form>
-        </>}
-        {checkoutId === "" ? <Button variant="primary" type='submit' onClick={() => sendOrder()}>Submit</Button> :
-        <h5>Id de compra: {checkoutId}, con este id podrás reclamar tu compra en caso de un imprevisto. Si quieres seguir comprando clickea en el apartado "Home" en la barra de navegación.</h5>}
+        <div className={customMyCss.centerDiv}>
+            <h2>Cart Shop Checkout</h2>
+            { checkoutId === "" && <>
+            <Form><Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control className={customMyCss.sizeForm} name='email' type="email" title='Complete' placeholder="Enter email" onChange={(e)=> {handleOnChange(e); handleEmailRequired(e)}} required/>
+                <Form.Text className="text-muted">
+                    Campo obligatorio.
+                </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Name</Form.Label>
+                <Form.Control className={customMyCss.sizeForm} name='name' type="text" placeholder="Enter name" onChange={handleOnChange} required/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Surname</Form.Label>
+                <Form.Control className={customMyCss.sizeForm} name='surname' type="text" placeholder="Enter surname" onChange={handleOnChange} required/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Cellphone number</Form.Label>
+                <Form.Control className={customMyCss.sizeForm} name='cellphone' type="number" title='Complete' placeholder="Enter cellphone number" onChange={(e)=> {handleOnChange(e); handleCellphoneRequired(e)}} required/>
+                <Form.Text className="text-muted">
+                    Campo obligatorio.
+                </Form.Text>
+            </Form.Group></Form>
+            </>}
+            {checkoutId === "" ? <div><Button variant="primary" type='submit' onClick={() => sendOrder()}>Enviar y terminar compra</Button><br/><h6>Para remover items del carrito Click en el carrito de la barra de navegación</h6></div> :
+            <div><h2>Compra efectuada exitosamente</h2><br/><h3>Id de compra: {checkoutId}</h3><br/><h5>Con este id podrás reclamar tu compra en caso de un imprevisto.</h5><br/><h5> Si quieres seguir comprando clickea en el apartado "Home" en la barra de navegación.</h5><br/><h4>En estos días te comunicaremos por tu mail o tu teléfono para acordar y confirmar el pago y los envíos</h4></div>}
+        </div>
+        { cart.length > 0 && <CartCheckoutItems/>}
     </>
   )
 }
