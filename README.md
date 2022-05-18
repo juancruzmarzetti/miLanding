@@ -1,4 +1,8 @@
 
+# Demo:
+![](gifgifgoofy.gif)
+
+
 # Reglas de colaboración:
 
 ### Al agregar código: 
@@ -20,9 +24,11 @@ Agregar un/os comentario/s en la/s parte/s del código que se haya cambiado indi
 
 ## Bootstrap:
 El uso de Bootstrap en este proyecto no es necesario, pero lo utilicé para investigar la relación de React func con Bootstrap para React, ya que el uso de Bootstrap para cada lenguaje es diferente en cunato al modo de implementación.
+   versión de react-bootstrap: ^2.2.1
 
 ## Firebase:
 El uso de Firebase lo utilicé como base de datos de los productos.
+ versión: ^9.7.0
 
 # ¿Por qué se hizo este proyecto?
 Este proyecto es una práctica mas que otra cosa, es un E-commerce básico, hecho a lo largo del curso de React de Coder House, donde la empresa ficticia es React Pub, un comercio virtual donde se pueden comprar cervezas. 
