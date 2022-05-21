@@ -27,7 +27,7 @@ El uso de Bootstrap en este proyecto no es necesario, pero lo utilicé para inve
    versión de react-bootstrap: ^2.2.1
 
 ## Firebase:
-El uso de Firebase lo utilicé como base de datos de los productos.
+El uso de Firebase lo utilicé como base de datos de los productos y también para el Hosting.
  versión: ^9.7.0
 
 # ¿Por qué se hizo este proyecto?
@@ -37,7 +37,7 @@ Este proyecto es una práctica mas que otra cosa, es un E-commerce básico, hech
 El proyecto esta dividido en diferentes componentes, donde varios son de tipo Widget (lo visible), otros de tipo Container (lo lógico detrás de lo visible). A su vez se implementa react-router-dom, lo cual hace posible la navegación entre diferentes componentes sin tener que refrescar la página, para mayor performance en cuanto al código (desde mi perspectiva). En principio hay una lista de items, lo cual abarca a los componentes ItemListContainer, ItemList e Item, donde Item. Donde a su vez el componente Item tiene un botón que redirige al detalle del producto, el cual es el producto con más imagenes, y con un texto que señala sus características singulares, donde tambien esta el componente ItemCount, que es un contador para sumar y restar la cantidad de items de ese producto que se quieren agregar al carrito. A su vez, al apretar Comprar, se agrega la cantidad seleccionada al carrito y aparece un botón que te redirige a la ruta del carrito, donde te dice el precio final de todo tu carrito, podés tambien remover el producto que quieras del carrito, y luego de esa experiencia en el carrito y chequear que queres comprar eso productos el botón "Finish my purchase"(terminar mi compra), te redirige al Checkout del carrito, donde hay un formulario en el cual hay 4 campos a completar, de los cuales dos son obligatorios y los otros dos, como son datos personales y no relevantes, son opcionales. Los campos obligatorios son obligatorios porque son necesarios para contactar al comprador o la compradora y confirmar el método de pago y el envío. En el checkout luego del formulario está el ticket del carrito con su precio final respectivo. Al apretar en el botón de Enviar y terminar compra, en el checkout, te devuelve el Id del documento creado en Firebase con la órden de compra enviada, la cual también recopila la fecha en que se ejecutó la compra y a su vez los datos del formulario. Aparte también en la Barra de navegación se puede navegar al carrito durante toda la experiencia en la página, y a las categorías de los productos si es necesario.
 
 # Al hacer cambios del código, cómo correr el proyecto:
-Correrlo con "npm start" para previsualizar como funciona, falta hacer el deploy aún, porque saltan errores al intentar hacer el deploy con firebase.
+Correrlo con "npm start" para previsualizar como funciona. Una vez que vimos que corre bien hacer "npm run build", y luego "firebase deploy" (presuponiendo que ya habíamos hecho "npm install -g firebase-tools").
 
 # Getting Started with Create React App
 
